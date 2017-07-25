@@ -924,91 +924,385 @@ exports.BattleMovedex = {
 		flags: {},
 	},
 	"prismspray": {
-        accuracy: 100,
-        basePower: 100,
-        category: "Special",
-        desc: "This move's type is randomlay determined",
-        shortDesc: "Varies in type randomly.",
-        id: "prismspray",
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		desc: "This move's type is randomly determined",
+        shortDesc: "Varies in type randomly.",        
+		id: "prismspray",
         name: "Prism Spray",
         pp: 20,
         priority: 0,
-        flags: {protect: 1, mirror: 1},
-        onEffectiveness: function (move, pokemon) {
-            switch (this.random(0, 20)){
-                case 0:
-                    move.type = "Normal";
-                    break;
-                case 1:
-                    move.type = "Fighting";
-                    break;
-                case 2:
-                    move.type = "Flying";
-                    break;
-                case 3:
-                    move.type = "Ground";
-                    break;
-                case 4:
-                    move.type = "Poison";
-                    break;
-                case 5:
-                    move.type = "Sound";
-                    break;
-                case 6:
-                    move.type = "Fairy";
-                    break;
-                case 7:
-                    move.type = "Tri";
-                    break;
-                case 8:
-                    move.type = "Gas";
-                    break;
-                case 9:
-                    move.type = "Electric";
-                    break;
-                case 10:
-                    move.type = "Water";
-                    break;
-                case 11:
-                    move.type = "Fire";
-                    break;
-                case 12:
-                    move.type = "Grass";
-                    break;
-                case 13:
-                    move.type = "Rock";
-                    break;
-                case 14:
-                    move.type = "Bug";
-                    break;
-                case 15:
-                    move.type = "Ghost";
-                    break;
-                case 16:
-                    move.type = "Steel";
-                    break;
-                case 17:
-                    move.type = "Psychic";
-                    break;
-                case 18:
-                    move.type = "Ice";
-                    break;
-                case 19:
-                    move.type = "Dragon";
-                    break;
-                case 20:
-                    move.type = "Dark";
-                    break;
-                default:
-                    move.type = "Normal";
-            }
-            
-        },
-        secondary: false,
-        target: "normal",
-        type: "Prism",
-        contestType: "Clever",
-    },
+		flags: {},
+		onHit: function (target) {
+			let moves = [];
+			for (let i in exports.BattleMovedex) {
+				let move = exports.BattleMovedex[i];
+				if (i !== move.id) continue;
+				if (move.isZ || move.isNonstandard) continue;
+				let noMetronome = {
+					pswater:1, psnormal:1, psgrass:1, psfire:1, pssound:1, psdark:1, psghost:1, pspsychic:1, psfighting:1, pssteel:1, psice:1, psground:1, psrock:1, psgas:1, psbug:1, psflying:1, pselectric:1, psfairy:1, pspoison:1, psdragon:1, 
+				};
+				if (noMetronome[move.id]) {
+					moves.push(move);
+				}
+			}
+			let randomMove = '';
+			if (moves.length) {
+				moves.sort((a, b) => a.num - b.num);
+				randomMove = moves[this.random(moves.length)].id;
+			}
+			if (!randomMove) {
+				return false;
+			}
+			this.useMove(randomMove, target);
+		},
+		secondary: false,
+		target: "self",
+		type: "Normal",
+		contestType: "Cute",
+	},
+		
+	"pswater": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "pswater",
+		name: "Prism Spray: Water",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Water",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psnormal": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psnormal",
+		name: "Prism Spray: Normal",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Normal",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psgrass": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psgrass",
+		name: "Prism Spray: Grass",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Grass",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psfire": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psfire",
+		name: "Prism Spray: Fire",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Fire",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"pssound": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "pssound",
+		name: "Prism Spray: Sound",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Sound",
+		zMovePower: 120,
+		contestType: "Clever, I guess? Who's going to look here anyway.",
+	},
+	"psdark": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psdark",
+		name: "Prism Spray: Dark",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Dark",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psghost": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psghost",
+		name: "Prism Spray: Ghost",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Ghost",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"pspsychic": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "pspsychic",
+		name: "Prism Spray: Psychic",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Psychic",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psfighting": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psfighting",
+		name: "Prism Spray: Fighting",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Fighting",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"pssteel": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "pssteel",
+		name: "Prism Spray: Steel",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Steel",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psice": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psice",
+		name: "Prism Spray: Ice",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Ice",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psground": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psground",
+		name: "Prism Spray: Ground",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Ground",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psrock": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psrock",
+		name: "Prism Spray: Rock",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Rock",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psgas": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psgas",
+		name: "Prism Spray: Gas",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Gas",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psbug": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psbug",
+		name: "Prism Spray: Bug",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Bug",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psflying": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psflying",
+		name: "Prism Spray: Flying",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Flying",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"pselectric": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "pselectric",
+		name: "Prism Spray: Electric",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Electric",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psfairy": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psfairy",
+		name: "Prism Spray: Fairy",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Fairy",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"pspoison": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "pspoison",
+		name: "Prism Spray: Poison",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Poison",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
+	"psdragon": {
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		desc: "Used to only be called by Prism Spray",
+		shortDesc: "Used to only be called by Prism Spray.",
+		id: "psdragon",
+		name: "Prism Spray: Dragon",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: false,
+		target: "normal",
+		type: "Dragon",
+		zMovePower: 120,
+		contestType: "Clever",
+	},
 	protect: {
 		inherit: true,
 		priority: 3,
