@@ -174,6 +174,25 @@ exports.BattleMovedex = {
 		inherit: true,
 		accuracy: 75,
 	},
+	"boil": {
+		accuracy: 100,
+        	basePower: 75,
+        	category: "Special",
+        	desc: "This move is strong against Water types.",
+        	shortDesc: "Does more damage to Water types",
+        	id: "boil",
+        	name: "Boil",
+        	pp: 20,
+        	priority: 0,
+        	flags: {protect: 1, mirror: 1},
+        	onEffectiveness: function (typeMod, type) {
+            		if (type === 'Water') return 1;
+        	},
+        	secondary: false,
+        	target: "normal",
+        	type: "Fire",
+        	contestType: "Clever",
+    	},
 	bonerush: {
 		inherit: true,
 		accuracy: 80,
@@ -241,6 +260,25 @@ exports.BattleMovedex = {
 			return Math.floor(target.hp * 120 / target.maxhp) + 1;
 		},
 	},
+	"crystalbolt": {
+		accuracy: 100,
+        	basePower: 70,
+        	category: "Special",
+        	desc: "This move does neutral damage to Ground types.",
+        	shortDesc: "Damages Ground types",
+        	id: "crystalbolt",
+        	name: "Crystal Bolt",
+        	pp: 20,
+        	priority: 0,
+        	flags: {protect: 1, mirror: 1},
+        	onEffectiveness: function (typeMod, type) {
+            		if (type === 'Ground') return 0;
+        	},
+        	secondary: false,
+        	target: "normal",
+        	type: "Electric",
+        	contestType: "Clever",
+    	},
 	curse: {
 		inherit: true,
 		desc: "If the user is not a Ghost type, lowers the user's Speed by 1 stage and raises the user's Attack and Defense by 1 stage. If the user is a Ghost type, the user loses 1/2 of its maximum HP, rounded down and even if it would cause fainting, in exchange for the target losing 1/4 of its maximum HP, rounded down, at the end of each turn while it is active. If the target uses Baton Pass, the replacement will continue to be affected. Fails if there is no target or if the target is already affected or has a substitute.",
@@ -579,6 +617,25 @@ exports.BattleMovedex = {
 			return null;
 		},
 	},
+	"ghosthammer": {
+        	accuracy: 85,
+        	basePower: 80,
+        	category: "Physical",
+        	desc: "This move does neutral damage.",
+        	shortDesc: "Ignores types",
+        	id: "ghosthammer",
+        	name: "Ghost Hammer",
+        	pp: 10,
+        	priority: 0,
+        	flags: {protect: 1, mirror: 1},
+        	onEffectiveness: function (typeMod, type) {
+            		return 0;
+        	},
+        	secondary: false,
+        	target: "normal",
+        	type: "Ghost",
+        	contestType: "Clever",
+    	},
 	gigadrain: {
 		inherit: true,
 		basePower: 60,
@@ -1590,24 +1647,24 @@ exports.BattleMovedex = {
 		basePower: 50,
 	},
 	"voidsphere": {
-        accuracy: 100,
-        basePower: 85,
-        category: "Special",
-        desc: "This move does neutral damage.",
-        shortDesc: "Ignores types",
-        id: "voidsphere",
-        name: "Void Sphere",
-        pp: 20,
-        priority: 0,
-        flags: {protect: 1, mirror: 1},
-        onEffectiveness: function (typeMod, type) {
-            return 1;
-        },
-        secondary: false,
-        target: "normal",
-        type: "Normal",
-        contestType: "Clever",
-    },
+        	accuracy: 100,
+        	basePower: 85,
+        	category: "Special",
+        	desc: "This move does neutral damage.",
+        	shortDesc: "Ignores types",
+        	id: "voidsphere",
+        	name: "Void Sphere",
+        	pp: 20,
+        	priority: 0,
+        	flags: {protect: 1, mirror: 1},
+        	onEffectiveness: function (typeMod, type) {
+            		return 0;
+        	},
+        	secondary: false,
+        	target: "normal",
+        	type: "Normal",
+        	contestType: "Clever",
+    	},
 	volttackle: {
 		inherit: true,
 		recoil: [1, 3],
