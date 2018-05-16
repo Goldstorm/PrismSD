@@ -80,7 +80,7 @@ exports.BattlePokedex = {
 	},
 	fambaco : {
 		species: "Fambaco",
-		types: ["Ghost", "Fighting],
+		types: ["Ghost", "Fighting"],
 		genderRatio: {M: 0, F: 0},
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 125, spe: 125},
 		abilities: {0: "Naljo Fury", H: "Naljo Fury"},
