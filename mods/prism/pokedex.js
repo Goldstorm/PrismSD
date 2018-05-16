@@ -31,7 +31,7 @@ exports.BattlePokedex = {
 	},
 	igglybuff: {
 	        inherit: true,
-		types: [Sound", "Normal"],
+		types: ["Sound", "Normal"],
 	},	
 	jigglypuff: {
 	        inherit: true,
