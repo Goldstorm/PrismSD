@@ -1,7 +1,6 @@
 'use strict';
 
 exports.BattlePokedex = {
-	{,
 	gengar: {
 		inherit: true,
 		types: ["Ghost", "Gas"],
@@ -79,4 +78,14 @@ exports.BattlePokedex = {
 		evoLevel: 2,
 		eggGroups: ["Field"],
 	},
+	fambaco : {
+		species: "Fambaco",
+		types: ["Ghost", "Fighting],
+		genderRatio: {M: 0, F: 0},
+		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 125, spe: 125},
+		abilities: {0: "Naljo Fury", H: "Naljo Fury"},
+		heightm: 1,
+		weightkg: 23.5,
+		color: "White",
+		eggGroups: ["None"]
 };
