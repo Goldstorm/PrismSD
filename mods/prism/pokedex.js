@@ -88,4 +88,15 @@ exports.BattlePokedex = {
 		weightkg: 23.5,
 		color: "White",
 		eggGroups: ["None"]
+	},
+	libabeel : {
+		species: "Libabeel",
+		types: ["Steel", "Poison"],
+		genderRatio: {M: 0, F: 0},
+		baseStats: {hp: 125, atk: 100, def: 125, spa: 100, spd: 100, spe: 100},
+		abilities: {0: "Naljo Fury", H: "Naljo Fury"},
+		heightm: 1,
+		weightkg: 23.5,
+		color: "Silver",
+		eggGroups: ["None"]
 };
