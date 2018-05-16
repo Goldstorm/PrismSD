@@ -99,4 +99,15 @@ exports.BattlePokedex = {
 		weightkg: 23.5,
 		color: "Silver",
 		eggGroups: ["None"]
+	},
+	phancero : {
+		species: "Phancero",
+		types: ["Ghost", "Flying"],
+		genderRatio: {M: 0, F: 0},
+		baseStats: {hp: 178, atk: 137, def: 57, spa: 128, spd: 85, spe: 65},
+		abilities: {0: "Download", H: "Contrary"},
+		heightm: 1,
+		weightkg: 23.5,
+		color: "Black",
+		eggGroups: ["None"]
 };
