@@ -1,6 +1,7 @@
 'use strict';
 
 exports.BattlePokedex = {
+	{,
 	gengar: {
 		inherit: true,
 		types: ["Ghost", "Gas"],
