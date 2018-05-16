@@ -35,19 +35,19 @@ exports.BattlePokedex = {
 	},	
 	torkoal: {
                 inherit: true,
-                types: {"Fire", "Gas"],
+                types: ["Fire", "Gas"],
 	},
 	koffing: {
                 inherit: true,
-                types: {"Poison", "Gas"],
+                types: ["Poison", "Gas"],
 	},
 	weezing: {
                 inherit: true,
-                types: {"Poison", "Gas"],
+                types: ["Poison", "Gas"],
 	},		
 	porygonz: {
 		inherit: true,
-		types: {"Sound"],
+		types: ["Sound"],
 	},
 	igglybuff: {
 	        inherit: true,
@@ -55,31 +55,31 @@ exports.BattlePokedex = {
 	},	
 	jigglypuff: {
 	        inherit: true,
-		types: {"Sound", "Fairy"],
+		types: ["Sound", "Fairy"],
 	},
 	wigglytuff: {
 	        inherit: true,
-		types: {"Sound", "Fairy"],
+		types: ["Sound", "Fairy"],
 	},
 	whismur: {
 	        inherit: true,
-		types: {"Sound"],
+		types: ["Sound"],
 	},
 	loudred: {
 	        inherit: true,
-		types: {"Sound"],
+		types: ["Sound"],
 	},
 	exploud: {
 	        inherit: true,
-		types: {"Sound"],
+		types: ["Sound"],
 	},
 	chingling: {
 	        inherit: true,
-		types: {"Sound", "Psychic"],
+		types: ["Sound", "Psychic"],
 	},
 	chimecho: {
 	        inherit: true,
-		types: {"Sound", "Psychic"],
+		types: ["Sound", "Psychic"],
 	},		
 	azumarill: {
 		inherit: true,
