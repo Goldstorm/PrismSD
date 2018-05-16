@@ -110,4 +110,26 @@ exports.BattlePokedex = {
 		weightkg: 23.5,
 		color: "Black",
 		eggGroups: ["None"]
+	},
+	raiwato : {
+		species: "Raiwato",
+		types: ["Electric", "Rock"],
+		genderRatio: {M: 0, F: 0},
+		baseStats: {hp: 100, atk: 100, def: 100, spa: 125, spd: 100, spe: 125},
+		abilities: {0: "Naljo Fury", H: "Naljo Fury"},
+		heightm: 1,
+		weightkg: 23.5,
+		color: "Grey",
+		eggGroups: ["None"]
+	},
+	varaneous : {
+		species: "Varaneous",
+		types: ["Fire", "Water"],
+		genderRatio: {M: 0, F: 0},
+		baseStats: {hp: 100, atk: 125, def: 125, spa: 100, spd: 100, spe: 100},
+		abilities: {0: "Naljo Fury", H: "Naljo Fury"},
+		heightm: 1,
+		weightkg: 23.5,
+		color: "Red",
+		eggGroups: ["None"]
 };
