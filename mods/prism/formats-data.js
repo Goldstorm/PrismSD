@@ -109,6 +109,10 @@ exports.BattleFormatsData = {
 		randomBattleMoves: ["coil", "gunkshot", "seedbomb", "glare", "suckerpunch", "aquatail", "crunch", "earthquake", "rest"],
 		tier: "NU",
 	},
+	fambaco: {
+		inherit: true,
+		randomBattleMoves: ["scratch", "astonish", "psychocut", "focusenergy"],
+                tier: "OU",
 	pichu: {
 		inherit: true,
 		randomBattleMoves: ["fakeout", "volttackle", "encore", "irontail", "toxic", "thunderpunch"],
