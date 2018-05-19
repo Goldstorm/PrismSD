@@ -132,4 +132,4 @@ exports.BattlePokedex = {
 		weightkg: 23.5,
 		color: "Red",
 		eggGroups: ["None"]
-
+	}
