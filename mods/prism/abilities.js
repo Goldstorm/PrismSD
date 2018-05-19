@@ -122,6 +122,16 @@ exports.BattleAbilities = {
 		rating: 0,
 		num: 58,
 	},
+	"naljofury": {
+		desc: "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 3 instead of 1.5 while in Naljo.",
+		shortDesc: "This Pokemon's same-type attack bonus (STAB) is 3 instead of 1.5.",
+		onModifyMove: function (move) {
+			move.stab = 3;
+		},
+		id: "naljofury",
+		name: "Naljo Fury",
+		rating: 5,
+	},
 	"naturalcure": {
 		inherit: true,
 		onCheckShow: function (pokemon) {},

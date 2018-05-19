@@ -97,4 +97,4 @@ Special thanks
 # PrismSD
 
 For the Pokemon Prism Edits
-Special Thanks go to LunaStik (Andrew Poe), Goldstorm (Nick Goldstein), and Retrosol (Travis Ryan Blackmon).
+Special Thanks go to LunaStik (Andrew Poe-Bowdren), Goldstorm (Nick Goldstein), and Retrosol (Travis Ryan Blackmon).
