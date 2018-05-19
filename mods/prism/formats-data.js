@@ -113,6 +113,7 @@ exports.BattleFormatsData = {
 		inherit: true,
 		randomBattleMoves: ["scratch", "astonish", "psychocut", "focusenergy"],
                 tier: "OU",
+	},
 	pichu: {
 		inherit: true,
 		randomBattleMoves: ["fakeout", "volttackle", "encore", "irontail", "toxic", "thunderpunch"],
