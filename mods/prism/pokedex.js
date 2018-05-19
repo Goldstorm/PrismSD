@@ -133,4 +133,4 @@ exports.BattlePokedex = {
 		color: "Red",
 		eggGroups: ["None"]
 	}
-	{;
+};
