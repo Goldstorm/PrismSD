@@ -13657,6 +13657,7 @@ exports.BattlePokedex = {
 		weightkg: 61,
 		color: "White",
 		eggGroups: ["Undiscovered"],
+	},
 	fambaco : {
 		species: "Fambaco",
 		types: ["Ghost", "Fighting"],
