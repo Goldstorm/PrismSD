@@ -9,7 +9,7 @@ exports.BattleLearnsets = {
 		blizzard: ["4M"],
 		bodyslam: ["4M"],
 		counter: ["4M"],
-		crunch" ["4M"],
+		crunch: ["4M"],
 		crystalbolt: ["4M"],
 		curse: ["4M"],
 		cut: ["4M"],
