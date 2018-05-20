@@ -114,6 +114,11 @@ exports.BattleFormatsData = {
 		randomBattleMoves: ["swordsdance", "shadowclaw", "machpunch", "highjumpkick"],
                 tier: "OU",
 	},
+      	sylveon: {
+		inherit: true,
+		randomBattleMoves: ["swordsdance", "shadowclaw", "machpunch", "highjumpkick"],
+                tier: "OU",
+	},
 	pichu: {
 		inherit: true,
 		randomBattleMoves: ["fakeout", "volttackle", "encore", "irontail", "toxic", "thunderpunch"],
