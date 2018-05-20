@@ -95,7 +95,7 @@ exports.BattleLearnsets = {
 		hail: ["4M"],		
 		headbutt: ["4M"],
 		hiddenpower: ["4M"],
-		hijumpkick: ["4M"],
+		highjumpkick: ["4M"],
 		hyperbeam: ["4M"],
 		hypervoice: ["4M"],
 		icebeam: ["4M"],
