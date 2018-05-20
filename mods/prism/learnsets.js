@@ -428,7 +428,7 @@ exports.BattleLearnsets = {
 		hyperbeam: ["4M"],
 		icebeam: ["4M"],
 		icepunch: ["4M"],
-		irondefense: ["4M"]
+		irondefense: ["4M"],
 		ironhead: ["4M"],
 		irontail: ["4M"],
 		mudslap: ["4M"],
