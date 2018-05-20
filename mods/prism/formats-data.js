@@ -111,7 +111,7 @@ exports.BattleFormatsData = {
 	},
 	fambaco: {
 		inherit: true,
-		randomBattleMoves: ["scratch", "astonish", "psychocut", "focusenergy"],
+		randomBattleMoves: ["swordsdance", "shadowclaw", "machpunch", "highjumpkick"],
                 tier: "OU",
 	},
 	pichu: {
