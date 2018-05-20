@@ -981,8 +981,8 @@ exports.BattleMovedex = {
 		},
 		target: "self",
 	},
-		"moonblast": {
-		num: 585,
+	"moonblast": {
+		inherit: true,
 		accuracy: 100,
 		basePower: 95,
 		category: "Special",
