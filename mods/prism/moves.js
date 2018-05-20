@@ -981,6 +981,30 @@ exports.BattleMovedex = {
 		},
 		target: "self",
 	},
+		"moonblast": {
+		num: 585,
+		accuracy: 100,
+		basePower: 95,
+		category: "Special",
+		desc: "Has a 30% chance to lower the target's Special Attack by 1 stage.",
+		shortDesc: "30% chance to lower the target's Sp. Atk by 1.",
+		id: "moonblast",
+		isViable: true,
+		name: "Moonblast",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			boosts: {
+				spa: -1,
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+		zMovePower: 175,
+		contestType: "Beautiful",
+},
 	moonlight: {
 		inherit: true,
 		onHit: function (pokemon) {
