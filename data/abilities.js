@@ -2,7 +2,6 @@
 
 Ratings and how they work:
 
-
 -2: Extremely detrimental
 	  The sort of ability that relegates Pokemon with Uber-level BSTs into NU.
 	ex. Slow Start, Truant
