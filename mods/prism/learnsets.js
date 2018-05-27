@@ -205,6 +205,11 @@ exports.BattleLearnsets = {
 		willowisp: ["4M"], 
 		zapcannon: ["4M"],
 	}},
+		abra: {learnset: {
+		    teleport: ["4M"],
+		    psychic: ["4M"]
+			
+	}},
 	porygonz: {learnset: {
                 aerialace: ["4M"],
 		agility: ["4L"],
@@ -511,8 +516,3 @@ exports.BattleLearnsets = {
 		swift: ["4M"],
 		thunder: ["4M"],
 		thunderbolt: ["4M"],
-		thunderpunch: ["4M"],
-		thunderwave: ["4M"],
-		toxic: ["4M"],
-	}},
-	};
