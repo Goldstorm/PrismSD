@@ -1,7 +1,7 @@
 'use strict';
 
 exports.BattleLearnsets = {
-	exeggutor: { learnset: {
+	exeggutor: {learnset: {
 		aerialace: ["4M"],
 		ancientpower: ["4M"],
 		attract: ["4M"],
@@ -31,8 +31,8 @@ exports.BattleLearnsets = {
 		prismspray: ["4M"],
 		protect: ["4M"],
 		psychic: ["4M"],
-                psychicm: ["4M"],
-                rage: ["4M"],		
+        psychicm: ["4M"],
+       rage: ["4M"],		
 		razorleaf: ["4M"],
 		reflect: ["4M"],
 		rest: ["4M"],
@@ -205,7 +205,6 @@ exports.BattleLearnsets = {
 		willowisp: ["4M"], 
 		zapcannon: ["4M"],
 	}},
-	
 	porygonz: {learnset: {
                 aerialace: ["4M"],
 		agility: ["4L"],
@@ -266,8 +265,7 @@ exports.BattleLearnsets = {
 		voidsphere: ["4M"],
 		zapcannon: ["4M"],
 	}},
-  
-	salamence: { learnset: {
+	salamence: {learnset: {
 		aerialace: ["4M"],
 		attract: ["4M"], 
 		bite: ["4M"],
@@ -331,7 +329,7 @@ exports.BattleLearnsets = {
 		twister: ["4M"],
 		zenheadbutt: ["4M"],
 	}},
-	sylveon: { learnset: {
+	sylveon: {learnset: {
 		aerialace: ["4M"], 
 		attract: ["4M"], 
 		batonpass: ["4M"],
@@ -380,7 +378,7 @@ exports.BattleLearnsets = {
 		sleeptalk: ["4M"], 
 		substitute: ["4M"], 
 		sunnyday: ["4M"],
-                swagger: ["4M"],		
+        swagger: ["4M"],		
 		sweetkiss: ["4M"],
 		sweetscent: ["4M"], 
 		swift: ["4M"], 
@@ -391,7 +389,63 @@ exports.BattleLearnsets = {
 		triattack: ["4M"], 
 		whirlwind: ["4M"], 
 	}},
-	
+	torkoal {learnset: {
+		amnesia: ["4M"],
+		attract: ["4M"],
+		bodyslam: ["4M"],
+		boil: ["4M"],
+		bulkup: ["4M"],
+		counter: ["4M"],
+		curse: ["4M"],
+		defensecurl: ["4M"],
+		doubleedge: ["4M"],
+		doubleteam: ["4M"],
+		earthpower: ["4M"],
+		earthquake: ["4M"],
+		ember: ["4M"],
+		endure: ["4M"],
+		explosion: ["4M"],
+		fireblast: ["4M"],
+		firespin: ["4M"],
+		flail: ["4M"],
+		flamethrower: ["4M"],
+		frustration: ["4M"],
+		headbutt: ["4M"],
+		hiddenpower: ["4M"],
+		hyperbeam: ["4M"],
+		irondefense: ["4M"],
+		irontail: ["4M"],
+		laughinggas: ["4M"],
+		lavapool: ["4M"],
+		mudslap: ["4M"],
+		mustardgas: ["4M"],
+		naturepower: ["4M"],
+		nervegas: ["4M"],
+		prismspray: ["4M"],
+		protect: ["4M"],
+		rage: ["4M"],
+		rapidspin: ["4M"],
+		rest: ["4M"],
+		return: ["4M"],
+		rockslide: ["4M"],
+		rocksmash: ["4M"],
+		rollout: ["4M"],
+		sandstorm: ["4M"],
+		selfdestruct: ["4M"],
+		sleeptalk: ["4M"],
+		sludgebomb: ["4M"],
+		smog: ["4M"],
+		smokescreen: ["4M"],
+		solarbeam: ["4M"],
+		strength: ["4M"],
+		substitute: ["4M"],
+		sunnyday: ["4M"],
+		swagger: ["4M"],
+		swift: ["4M"],
+		swordsdance: ["4M"],
+		toxic: ["4M"],
+		willowisp: ["4M"],
+	}},
 	tyranitar: {learnset: {
 		aerialace: ["4M"],	
 		ancientpower: ["4M"],
@@ -461,5 +515,4 @@ exports.BattleLearnsets = {
 		thunderwave: ["4M"],
 		toxic: ["4M"],
 	}},
-	
-};
+	};
