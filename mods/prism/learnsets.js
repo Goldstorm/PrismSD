@@ -31,8 +31,8 @@ exports.BattleLearnsets = {
 		prismspray: ["4M"],
 		protect: ["4M"],
 		psychic: ["4M"],
-        psychicm: ["4M"],
-       rage: ["4M"],		
+                psychicm: ["4M"],
+                rage: ["4M"],		
 		razorleaf: ["4M"],
 		reflect: ["4M"],
 		rest: ["4M"],
@@ -205,9 +205,9 @@ exports.BattleLearnsets = {
 		willowisp: ["4M"], 
 		zapcannon: ["4M"],
 	}},
-		abra: {learnset: {
-		    teleport: ["4M"],
-		    psychic: ["4M"]
+	abra: {learnset: {
+	        teleport: ["4M"],
+	        psychic: ["4M"],
 			
 	}},
 	porygonz: {learnset: {
@@ -383,7 +383,7 @@ exports.BattleLearnsets = {
 		sleeptalk: ["4M"], 
 		substitute: ["4M"], 
 		sunnyday: ["4M"],
-        swagger: ["4M"],		
+                swagger: ["4M"],		
 		sweetkiss: ["4M"],
 		sweetscent: ["4M"], 
 		swift: ["4M"], 
