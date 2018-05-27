@@ -516,3 +516,8 @@ exports.BattleLearnsets = {
 		swift: ["4M"],
 		thunder: ["4M"],
 		thunderbolt: ["4M"],
+		thunderpunch: ["4M"],
+-		thunderwave: ["4M"],
+-		toxic: ["4M"],
+-	}},
+-};
