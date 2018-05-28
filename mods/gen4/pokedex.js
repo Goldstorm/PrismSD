@@ -25,4 +25,8 @@ exports.BattlePokedex = {
 		inherit: true,
 		types: ["Ghost", "Gas"],
 	},
+	wigglytuff: {
+	        inherit: true,
+		types: ["Sound", "Fairy"],
+   },
 };
