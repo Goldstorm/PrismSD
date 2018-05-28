@@ -1,5 +1,6 @@
 'use strict';
 
+
 exports.BattleLearnsets = {
 	bulbasaur: {learnset: {
 		amnesia: ["4M"],
