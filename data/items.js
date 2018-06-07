@@ -5783,19 +5783,7 @@ exports.BattleItems = {
 
 	// Gen 2 items
 
-	"berserkgene": {
-		id: "berserkgene",
-		name: "Berserk Gene",
-		spritenum: 388,
-		onUpdate: function (pokemon) {
-			this.boost({atk: 2});
-			pokemon.addVolatile('confusion');
-			pokemon.setItem('');
-		},
-		gen: 2,
-		isNonstandard: 'gen2',
-		desc: "(Gen 2) On switch-in, raises holder's Attack by 2 and confuses it. Single use.",
-	},
+	
 	"berry": {
 		id: "berry",
 		name: "Berry",
@@ -6030,34 +6018,6 @@ exports.BattleItems = {
 		isNonstandard: 'gen2',
 		desc: "(Gen 2) Restores 5 PP to the first of the holder's moves to reach 0 PP. Single use.",
 	},
-	"pinkbow": {
-		id: "pinkbow",
-		name: "Pink Bow",
-		spritenum: 444,
-		onBasePower: function (basePower, user, target, move) {
-			if (move.type === 'Normal') {
-				return basePower * 1.1;
-			}
-		},
-		num: 251,
-		gen: 2,
-		isNonstandard: 'gen2',
-		desc: "(Gen 2) Holder's Normal-type attacks have 1.1x power.",
-	},
-	"polkadotbow": {
-		id: "polkadotbow",
-		name: "Polkadot Bow",
-		spritenum: 444,
-		onBasePower: function (basePower, user, target, move) {
-			if (move.type === 'Normal') {
-				return basePower * 1.1;
-			}
-		},
-		num: 251,
-		gen: 2,
-		isNonstandard: 'gen2',
-		desc: "(Gen 2) Holder's Normal-type attacks have 1.1x power.",
-	},
 	"przcureberry": {
 		id: "przcureberry",
 		name: "PRZ Cure Berry",
@@ -6124,4 +6084,256 @@ exports.BattleItems = {
 		isNonstandard: true,
 		desc: "If holder is a Crucibelle, this item allows it to Mega Evolve in battle.",
 	},
+	
+	// Prism items
+	
+	"berserkgene": {
+		id: "berserkgene",
+		name: "Berserk Gene",
+		spritenum: 388,
+		onUpdate: function (pokemon) {
+			this.boost({atk: 2});
+			pokemon.addVolatile('confusion');
+			pokemon.setItem('');
+		},
+		gen: 2,
+		desc: "On switch-in, raises holder's Attack by 2 and confuses it. Single use.",
+	},
+	"burnguard": {
+		id: "burnguard",
+		name: "Burn Guard",
+		spritenum: 461,
+		onSetStatus: function (status, target, source, effect) {
+			if (status.id !== 'brn') return;
+			if (!effect || !effect.status) return false;
+			this.add('-immune', target, 'burn', '[from] item: Burn Guard');
+			return false;
+		},
+		num: 247,
+		gen: 2,
+		desc: "Holder can't be burned.",
+	},
+	"cigarette": {
+		id: "cigarette",
+		name: "Cigarette",
+		spritenum: 461,
+		onBasePowerPriority: 6,
+		onBasePower: function (basePower, user, target, move) {
+			if (move.type === 'Gas') {
+				return basePower * 1.1;
+			}
+		},
+		num: 247,
+		gen: 2,
+		desc: "Holder's Gas-type attacks have 1.1x power.",
+	},
+	"confuseguard": {
+		id: "confuseguard",
+		name: "Confuse Guard",
+		spritenum: 461,
+		onTryAddVolatile: function (status, pokemon) {
+			if (status.id === 'confusion') return null;
+		},
+		onHit: function (target, source, move) {
+			if (move && move.volatileStatus === 'confusion') {
+				this.add('-immune', target, 'confusion', '[from] item: Confusion Guard');
+			}
+		},
+		num: 247,
+		gen: 2,
+		desc: "Holder can't be confused.",
+	},
+	"dawnring": {
+		id: "dawnring",
+		name: "Dawn Ring",
+		spritenum: 66,
+		onModifySpe: function (spe) {
+			return this.chainModify(1.5);
+		},
+		onSourceModifyAccuracy: function (accuracy) {
+			if (typeof accuracy === 'number') return;
+			return accuracy * 0.75;
+		},
+		num: 200,
+		gen: 2,
+		desc: "Increases holder's Speed by one stage, but reduces their Accuracy one stage.",
+	},
+	"firering": {
+		id: "firering",
+		name: "Fire Ring",
+		spritenum: 66,
+		onModifyDefPriority: 2,
+		onModifyDef: function (def) {
+			return this.chainModify(1.5);
+		},
+		onModifySpDPriority: 2,
+		onModifySpD: function (spd) {
+			return this.chainModify(0.66);
+		},
+		num: 200,
+		gen: 2,
+		desc: "Increases holder's Defense by one stage, but reduces their Special Defense one stage.",
+	},
+	"grassring": {
+		id: "grassring",
+		name: "Grass Ring",
+		spritenum: 66,
+		onModifyDefPriority: 2,
+		onModifyDef: function (def) {
+			return this.chainModify(0.66);
+		},
+		onModifySpDPriority: 2,
+		onModifySpD: function (spd) {
+			return this.chainModify(1.5);
+		},
+		num: 200,
+		gen: 2,
+		desc: "Increases holder's Special Defense by one stage, but reduces their Defense one stage.",
+	},
+	"megaphone": {
+		id: "megaphone",
+		name: "Megaphone",
+		spritenum: 461,
+		onBasePowerPriority: 6,
+		onBasePower: function (basePower, user, target, move) {
+			if (move.type === 'Sound') {
+				return basePower * 1.1;
+			}
+		},
+		num: 247,
+		gen: 2,
+		desc: "Holder's Sound-type attacks have 1.1x power.",
+	},
+	"moonring": {
+		id: "moonring",
+		name: "Moon Ring",
+		spritenum: 66,
+		onModifySpe: function (spe) {
+			return this.chainModify(0.66);
+		},
+		onModifyAccuracy: function (accuracy) {
+			if (typeof accuracy !== 'number') return;
+			return accuracy * 0.75;
+		},
+		num: 200,
+		gen: 2,
+		desc: "Increases holder's Evasion by one stage, but reduces their Speed one stage.",
+	},
+	"pinkbow": {
+		id: "pinkbow",
+		name: "Pink Bow",
+		spritenum: 444,
+		onBasePower: function (basePower, user, target, move) {
+			if (move.type === 'Fairy') {
+				return basePower * 1.1;
+			}
+		},
+		num: 251,
+		gen: 2,
+		desc: "Holder's Fairy-type attacks have 1.1x power.",
+	},
+	"poisonguard": {
+		id: "poisonguard",
+		name: "Poison Guard",
+		spritenum: 461,
+		onSetStatus: function (status, target, source, effect) {
+			if (status.id !== 'psn' && status.id !== 'tox') return;
+			if (!effect || !effect.status) return false;
+			this.add('-immune', target, 'poison', '[from] item: Poison Guard');
+			return false;
+		},
+		num: 247,
+		gen: 2,
+		desc: "Holder can't be poisoned.",
+	},
+	"polkadotbow": {
+		id: "polkadotbow",
+		name: "Polkadot Bow",
+		spritenum: 444,
+		onBasePower: function (basePower, user, target, move) {
+			if (move.type === 'Normal') {
+				return basePower * 1.1;
+			}
+		},
+		num: 251,
+		gen: 2,
+		desc: "Holder's Normal-type attacks have 1.1x power.",
+	},
+	"przguard": {
+		id: "przguard",
+		name: "PRZ Guard",
+		spritenum: 461,
+		onSetStatus: function (status, target, source, effect) {
+			if (status.id !== 'par') return;
+			if (!effect || !effect.status) return false;
+			this.add('-immune', target, 'paralysis', '[from] item: PRZ Guard');
+			return false;
+		},
+		num: 247,
+		gen: 2,
+		desc: "Holder can't be paralysed.",
+	},
+	"shinyring": {
+		id: "shinyring",
+		name: "Shiny Ring",
+		spritenum: 66,
+		onSourceModifyAccuracy: function (accuracy) {
+			if (typeof accuracy === 'number') return;
+			return accuracy * 1.33;
+		},
+		onModifyAccuracy: function (accuracy) {
+			if (typeof accuracy !== 'number') return;
+			return accuracy * 1.33;
+		},
+		num: 200,
+		gen: 2,
+		desc: "Increases holder's Accuracy by one stage, but reduces their Evasion one stage.",
+	},
+	"sleepguard": {
+		id: "sleepguard",
+		name: "Sleep Guard",
+		spritenum: 461,
+		onSetStatus: function (status, target, source, effect) {
+			if (status.id !== 'slp') return;
+			if (!effect || !effect.status) return false;
+			this.add('-immune', target, 'sleep', '[from] item: Sleep Guard');
+			return false;
+		},
+		num: 247,
+		gen: 2,
+		desc: "Holder can't be put to sleep.",
+	},
+	"thunderring": {
+		id: "thunderring",
+		name: "Thunder Ring",
+		spritenum: 66,
+		onModifySpAPriority: 1,
+		onModifySpA: function (spa) {
+			return this.chainModify(1.5);
+		},
+		onSourceModifyAccuracy: function (accuracy) {
+			if (typeof accuracy === 'number') return;
+			return accuracy * 0.75;
+		},
+		num: 200,
+		gen: 2,
+		desc: "Increases holder's Special Attack by one stage, but reduces their Accuracy one stage.",
+	},
+	"waterring": {
+		id: "waterring",
+		name: "Water Ring",
+		spritenum: 66,
+		onModifyAtkPriority: 1,
+		onModifyAtk: function (atk) {
+			return this.chainModify(1.5);
+		},
+		onModifyAccuracy: function (accuracy) {
+			if (typeof accuracy !== 'number') return;
+			return accuracy * 1.33;
+		},
+		num: 200,
+		gen: 2,
+		desc: "Increases holder's Attack by one stage, but reduces their Evasion one stage.",
+	},
+	
 };
