@@ -629,6 +629,7 @@ exports.BattleMovedex = {
         	onEffectiveness: function (typeMod, type) {
             		return 0;
         	},
+			ignoreImmunity: {'Normal': true},
         	secondary: false,
         	target: "normal",
         	type: "Ghost",
@@ -787,12 +788,6 @@ exports.BattleMovedex = {
 			// this is a side condition
 			onStart: function (side) {
 				this.add('-sidestart', side, 'move: Lava Pool');
-				this.effectData.layers = 1;
-			},
-			onRestart: function (side) {
-				if (this.effectData.layers >= 1) return false;
-				this.add('-sidestart', side, 'move: Lava Pool');
-				this.effectData.layers++;
 			},
 			onSwitchIn: function (pokemon) {
 				if (!pokemon.isGrounded()) return;
@@ -801,6 +796,7 @@ exports.BattleMovedex = {
 				pokemon.trySetStatus('brn', pokemon.side.foe.active[0]);
 			},
 			// TODO - Check game for conditions such as; if a fire pokemon is switched in does it remove lava pool like tspikes?
+			// TODO - Add removal of lava pool by defog/rapid spin
 		},
 		secondary: false,
 		target: "foeSide",
@@ -1759,6 +1755,7 @@ exports.BattleMovedex = {
         	onEffectiveness: function (typeMod, type) {
             		return 0;
         	},
+			ignoreImmunity: {'Ghost': true},
         	secondary: false,
         	target: "normal",
         	type: "Normal",
