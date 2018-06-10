@@ -1543,8 +1543,7 @@ exports.BattleMovedex = {
 		flags: {},
 	},
 	"springbuds": {
-		num: 720,
-        accuracy: 90,
+	accuracy: 90,
         basePower: 75,
         category: "Physical",
         shortDesc: "has a chance of seeding the foe",
