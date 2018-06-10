@@ -271,9 +271,6 @@ exports.BattleMovedex = {
             pp: 20,
             priority: 0,
             flags: {protect: 1, mirror: 1},
-            onEffectiveness: function (typeMod, type) {
-                    if (type === 'Ground') return 0;
-            },
             ignoreImmunity: {'Electric': true},
             secondary: false,
             target: "normal",
@@ -774,7 +771,6 @@ exports.BattleMovedex = {
 		},
 	},
   lavapool: {
-		num: 7002,
 		accuracy: 80,
 		basePower: 0,
 		category: "Status",
@@ -785,7 +781,7 @@ exports.BattleMovedex = {
 		name: "Lava Pool",
 		pp: 15,
 		priority: 0,
-		flags: {nonsky: 1,},
+		flags: {reflectable: 1, nonsky: 1},
 		sideCondition: 'lavapool',
 		effect: {
 			// this is a side condition
@@ -800,31 +796,11 @@ exports.BattleMovedex = {
 			},
 			onSwitchIn: function (pokemon) {
 				if (!pokemon.isGrounded()) return;
-				
-				//checks for Safeguard?
-				//if (!pokemon.runImmunity('Burn')) return;
-				
-				//doesn't burn fire types?
-				if (poke.hasType('Fire')) return;
-				
-				//keep for reference on removing with water attacks, or if fire type removal added
-				/*if (pokemon.hasType('Poison')) {
-					this.add('-sideend', pokemon.side, 'move: Toxic Spikes', '[of] ' + pokemon);
-					pokemon.side.removeSideCondition('toxicspikes');
-				} else if (this.effectData.layers >= 2) {
-					pokemon.trySetStatus('tox', pokemon.side.foe.active[0]);
-				} else {
-					pokemon.trySetStatus('psn', pokemon.side.foe.active[0]);
-				}*/
-				
+				if (!pokemon.runImmunity('Burn')) return;
+				if (pokemon.hasType('Fire')) return;
 				pokemon.trySetStatus('brn', pokemon.side.foe.active[0]);
 			},
-			onBasePower: function (basePower, attacker, defender, move) {
-				if (move.type === 'Water' && !defender.isSemiInvulnerable()) {
-					this.add('-sideend', pokemon.side, 'move: Lava Pool', '[of] ' + pokemon);
-					pokemon.side.removeSideCondition('lavapool');
-				}
-			},
+			// TODO - Check game for conditions such as; if a fire pokemon is switched in does it remove lava pool like tspikes?
 		},
 		secondary: false,
 		target: "foeSide",
@@ -1585,7 +1561,7 @@ exports.BattleMovedex = {
             }
         },
         secondary: {
-			chance: 100, 
+			chance: 10, 
 			volatileStatus: 'leechseed',
 			effect: {
 				onStart: function (target) {
