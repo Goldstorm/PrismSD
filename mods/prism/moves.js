@@ -271,7 +271,11 @@ exports.BattleMovedex = {
             pp: 20,
             priority: 0,
             flags: {protect: 1, mirror: 1},
+            onEffectiveness: function (typeMod, type) {
+                    if (type === 'Ground') return 0;
+            },
             ignoreImmunity: {'Electric': true},
+            secondary: false,
             target: "normal",
             type: "Electric",
             contestType: "Clever",
