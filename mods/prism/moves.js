@@ -616,8 +616,8 @@ exports.BattleMovedex = {
 		},
 	},
 	"ghosthammer": {
-        	accuracy: 85,
-        	basePower: 80,
+        	accuracy: 100,
+        	basePower: 85,
         	category: "Physical",
         	desc: "This move does neutral damage.",
         	shortDesc: "Ignores types",
