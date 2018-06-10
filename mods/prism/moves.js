@@ -274,7 +274,7 @@ exports.BattleMovedex = {
         	onEffectiveness: function (typeMod, type) {
             		if (type === 'Ground') return 0;
         	},
-        	secondary: false,
+        	ignoreImmunity: {'Electric': true},
         	target: "normal",
         	type: "Electric",
         	contestType: "Clever",
