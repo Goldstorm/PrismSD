@@ -146,9 +146,9 @@ exports.BattleFormats = {
 			// everything after this line only happens if we're doing legality enforcement
 
 			// only in gen 1 and 2 it was legal to max out all EVs
-			if (this.gen >= 3 && totalEV > 510) {
-				problems.push((set.name || set.species) + " has more than 510 total EVs.");
-			}
+			///if (this.gen >= 3 && totalEV > 510) {
+			///	problems.push((set.name || set.species) + " has more than 510 total EVs.");
+			///}
 
 			if (template.gender) {
 				if (set.gender !== template.gender) {
